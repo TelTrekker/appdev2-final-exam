@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const path = require('path');
 
 const authRoutes = require('./routes/authRoutes');
+const eventRoutes = require('./routes/eventRoutes');
 
 dotenv.config({ path: path.resolve(__dirname, '.env') });
 
@@ -15,6 +16,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/auth', eventRoutes);
 
 // Root Route
 app.get('/', (req, res) => {
